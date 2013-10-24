@@ -1,0 +1,37 @@
+
+CREATE TABLE Item_Master
+(Itm_id VARCHAR(10) NOT NULL,PRIMARY KEY(Itm_id),
+ Itm_name VARCHAR(20), 
+ Itm_description varchar(30),
+ Itm_stock int(5),
+ Master_Loc_id int(5)
+)
+
+ALTER TABLE item_master ADD 
+  FOREIGN KEY (Master_Loc_id) REFERENCES item_location(Loc_id)
+
+
+
+CREATE TABLE Item_Location
+(Loc_id int(5) ,
+ Loc_city varchar(20),
+ Loc_district varchar(30)
+);
+
+
+INSERT INTO item_location VALUES (5000 , 'Bangalore' , 'Bangalore Urban');
+INSERT INTO item_location VALUES (5001 , 'Nagercoil' , 'Kanniyakumari');
+INSERT INTO item_location VALUES (5002 , 'Kundanagari' , 'Belgaum');
+INSERT INTO item_location VALUES (5003 , 'Tumakuru' , 'Tumkur');
+INSERT INTO item_location VALUES (5004 , 'Mumbai' , 'Mumbai City');
+INSERT INTO item_location VALUES (5005 , 'Jaipur' , 'Rajasthan' );
+INSERT INTO item_location VALUES (5006 , 'Nellai' , 'Tirunelveli');
+
+
+INSERT INTO item_master VALUES ('ID000', 'Salt' , 'T Salt 50 gms' , 100 , 5000);
+INSERT INTO item_master VALUES ('ID001', 'Sugar' , 'T Sugar 50 gms', 100, 5001);
+INSERT INTO item_master VALUES ('ID002', 'Pepper' , 'T Pepper 50 gms' , 50 , 5002);
+INSERT INTO item_master VALUES ('ID003', 'Cashew' , 'T Cashew 100 gms', 75, 5003);
+INSERT INTO item_master VALUES ('ID004', 'Badam' , 'T Badam 50 gms' , 60 , 5004);
+INSERT INTO item_master VALUES ('ID005', 'Pistah' , 'T Pistah 100 gms' , 50, 5005);
+INSERT INTO item_master VALUES ('ID006', 'Chilli Powder', 'T Chilli Powder 100 gms' , '50' , '5006');
